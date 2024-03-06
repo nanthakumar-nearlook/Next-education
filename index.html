@@ -96,31 +96,34 @@
      
       background-repeat: no-repeat;
       background-position: 10px center;
-      padding-left: 40px; /* Adjust padding to make space for the icon */
+     
   }
 
 /* For screens smaller than 768px */
-@media (max-width: 1100px) {
+@media (max-width: 320px) {
   .container {
-      width: 100%;
-      height:75%;
-      padding: 0 15px;
-  
-      margin-left: -40px;
+    margin-left:-55px
   }
-  .bg-lightest{
-  margin-top: 20px;
+}
+@media (max-width: 395px) {
+  .container {
+    margin-left:-50px
+  }
+}
+@media (max-width: 450px) {
+  .container {
+    margin-left:-50px
+  }
+}
+
+@media (min-width:992px) {
+  .col-md-6 {
+    margin-left:-200px;
+    width:100%;
+  }
  
-  }
 }
 
-@media (max-width: 1024px){
-  .container {
-    width: 100%;
-    padding: 0 30px;
-
-}
-}
 
 @media (max-width: 1110px){
   .container {
@@ -136,12 +139,11 @@
 
 @media (min-width: 1110px) and (max-width: 2560px) {
   .container {
-      width: 100%;
+      width: 75%;
+      margin-left:160px;
       padding: 0 30px;
   }
-  .bg-lightest{
-    margin-left: 20px;
-    }
+ 
 }
 
 </style>
@@ -170,7 +172,7 @@
 <div class="container">
 <div class="row">
 <div class="col-md-6 col-md-push-3">
-<div class="text-center mb-60"><a href="#" class><img alt src="images/logo-wide.png"></a></div>
+<div class="text-center mb-60 logo"><a href="#" class><img alt src="images/logo-wide.png"></a></div>
 <div class="bg-lightest border-1px p-25" style="background-color:#ccc;width:80%;margin-left:80px;">
 
 <form id="appointment_form" name="appointment_form" class="mt-30" onsubmit="return submitForm();" method="post">
