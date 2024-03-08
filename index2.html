@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Popup Registration Form</title>
+    <style>
+      body{
+        background-image: url("images/bg/bg7.jpg");
+      }
+        /* Input container styles */
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            height:60px;
+
+        }
+        #registrationForm{
+            margin-left:500px;
+            width:550px;
+          
+        }
+        .icon {
+            background: dodgerblue;
+            color: white;
+       
+            text-align: center;
+           
+        }
+
+        .input-field {
+            flex: 1;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 20px; /* Adjust height as needed */
+            width:50px;
+        }
+
+        .input-field:focus {
+            border-color: dodgerblue;
+        }
+
+        /* Button styles */
+        .btn {
+            background-color: dodgerblue;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            width: 400px;
+            opacity: 0.9;
+           margin-left:55px;
+            border-radius: 5px;
+            height: 50px; /* Adjust height as needed */
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+        .btn1{
+            background-color: transparent; /* Set background color to transparent */
+            border: none; /* Remove border */
+            color: #333; /* Set text color */
+            font-size: 24px; /* Adjust font size */
+            cursor: pointer; /* Set cursor to pointer for better usability */
+            padding: 0; /* Remove padding */
+            width: 30px; /* Adjust width as needed */
+            height: 30px; /* Adjust height as needed */
+            margin-left:500px;
+        }
+        /* Popup container styles */
+        .form-popup {
+            display: none;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            background-color: white;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            max-width: 10px;
+            animation: popUp 0.5s ease forwards;
+        }
+        .appointment_form{
+            width:50%;
+        }
+        h2 {
+            text-align: center;
+        }
+        input{
+          max-height:50px;
+        }
+        #district{
+          max-height:50px;
+        }
+        textarea{
+          max-height:50px;
+        }
+        .form-popup {
+          max-width:30%;
+        }
+
+        /* Rsponsive adjustments */
+       
+        @media (max-width: 1500px) {
+          .form-popup {
+            max-width:60%;
+            max-height:130%;
+          }
+          #registrationForm{
+            width:550px;
+          }
+        }
+        @media (max-width: 1050px) {
+          body{
+            margin-left:-260px;
+          }
+          .form-popup {
+            max-width:360%;
+            max-height:130%;
+          }
+          .btn{
+            width:280px;
+            margin-left:120px;
+            margin-top:-50px;
+          }
+        }
+        @media (max-width: 780px) {
+          body{
+            margin-left:-390px;
+          }
+            .form-popup {
+                max-width:100%;
+            }
+        }
+        @media (max-width: 440px) {
+          body{
+            margin-left:-470px;
+          }
+          .form-popup {
+              max-width: 40%;
+              margin-left:-210px;
+              transform: translateX(50%);
+          }
+          .row{
+            max-width:80%;
+          }
+          .btn{
+            width:180px;
+            margin-left:50px;
+          }
+          .btn1{
+            margin-left:315px;
+            margin-top:20px;
+          }
+
+      }
+        @media (max-width: 380px) {
+          body{
+            margin-left:-470px;
+          }
+          .form-popup {
+              max-width: 37%;
+          
+              transform: translateX(50%);
+          }
+          .row{
+            max-width:80%;
+          }
+          .btn{
+            width:160px;
+            margin-left:50px;
+          }
+          .btn1{
+            margin-left:275px;
+          }
+      }
+      @media (max-width: 330px) {
+        body{
+          margin-left:-475px;
+        }
+        .form-popup {
+            max-width: 35%;
+           
+            transform: translateX(50%);
+           
+        }
+        .row{
+          max-width:80%;
+        }
+        .btn1{
+          margin-left:250px;
+        }
+        .btn{
+          width:160px;
+          margin-left:20px;
+        }
+    }
+        @keyframes popUp {
+          from {
+            transform: scale(0);
+          }
+          to {
+            transform: scale(1);
+          }
+        }
+    </style>
+</head>
+<body>
+
+<div id="registrationForm" class="form-popup" >
+    <button class="btn1" onclick="closeForm()">X</button>
+    <form id="appointment_form" name="appointment_form" onsubmit="return submitForm();" style="margin-top:-25px;">
+        <!-- Your input fields go here -->
+        <center><h4 class="text-theme-colored text-uppercase m-0" style="font-size:28px;">Registration</h4></center>
+        <div class="row" style="width:480px;margin-left:30px;">
+        
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\1.png"></label>
+            <input class="input-field" type="text" placeholder="Username" name="usrnm" style="height:67px;">
+          </div>
+        
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\2.png"></label>
+            <input class="input-field" type="text" placeholder="Email" name="email" id="email" style="height:67px;">
+          </div>
+          
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\3.png"></label>
+            <input class="input-field" type="text" placeholder="Phone Number" name="number" style="height:67px;">
+          </div>
+        
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\4.png"></label>
+            <input class="input-field" type="text" placeholder="School Name" name="name" style="height:67px">
+          </div>
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\5.png"></label>
+            <input class="input-field" type="text" placeholder="City" name="City" style="height:67px">
+          </div>
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\6.png"></label>
+            <select id="district" class="district-select"  style="height:67px;width:100%;">
+            
+                  <option value="">Select District</option>
+                  <option value="Ariyalur">Ariyalur</option>
+                  <option value="Chengalpattu">Chengalpattu</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Coimbatore">Coimbatore</option>
+                  <option value="Cuddalore">Cuddalore</option>
+                  <option value="Dharmapuri">Dharmapuri</option>
+                  <option value="Dindigul">Dindigul</option>
+                  <option value="Erode">Erode</option>
+                  <option value="Kallakurichi">Kallakurichi</option>
+                  <option value="Kancheepuram">Kancheepuram</option>
+                  <option value="Kanyakumari">Kanyakumari</option>
+                  <option value="Karur">Karur</option>
+                  <option value="Krishnagiri">Krishnagiri</option>
+                  <option value="Madurai">Madurai</option>
+                  <option value="Nagapattinam">Nagapattinam</option>
+                  <option value="Namakkal">Namakkal</option>
+                  <option value="Nilgiris">Nilgiris</option>
+                  <option value="Perambalur">Perambalur</option>
+                  <option value="Pudukkottai">Pudukkottai</option>
+                  <option value="Ramanathapuram">Ramanathapuram</option>
+                  <option value="Ranipet">Ranipet</option>
+                  <option value="Salem">Salem</option>
+                  <option value="Sivaganga">Sivaganga</option>
+                  <option value="Tenkasi">Tenkasi</option>
+                  <option value="Thanjavur">Thanjavur</option>
+                  <option value="Theni">Theni</option>
+                  <option value="Thoothukudi">Thoothukudi</option>
+                  <option value="Tiruchirappalli">Tiruchirappalli</option>
+                  <option value="Tirunelveli">Tirunelveli</option>
+                  <option value="Tirupathur">Tirupathur</option>
+                  <option value="Tiruppur">Tiruppur</option>
+                  <option value="Tiruvallur">Tiruvallur</option>
+                  <option value="Tiruvannamalai">Tiruvannamalai</option>
+                  <option value="Tiruvarur">Tiruvarur</option>
+                  <option value="Vellore">Vellore</option>
+                  <option value="Viluppuram">Viluppuram</option>
+                  <option value="Virudhunagar">Virudhunagar</option>
+        
+          </select>
+        
+          <script>
+              // You can add JavaScript to handle the selection if necessary
+              document.getElementById('district').addEventListener('change', function() {
+                  var selectedDistrict = this.value;
+                  console.log('Selected District:', selectedDistrict);
+                  // You can perform actions based on the selected district
+              });
+          </script>
+          </div>
+          <div class="input-container">
+            <label class="icon" ><img src="C:\Users\Nanth\Downloads\Template\Template\images\gallery\full\7.png"></label>
+            <textarea id="msg" name="massage"  cols="80" placeholder="Enter Message" style="font-size:15px;width:100%;height:67px"></textarea>
+          </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</div>
+
+<script>
+    // Open the registration form after 5 seconds
+    setTimeout(function() {
+        openForm();
+    }, 2000);
+
+    // Open the registration form
+    function openForm() {
+        document.getElementById("registrationForm").style.display = "block";
+    }
+
+    // Close the registration form
+    function closeForm() {
+        document.getElementById("registrationForm").style.display = "none";
+    }
+
+</script>
+
+</body>
+</html>
